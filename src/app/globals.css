@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'TwitterChirp';
+  src: url('https://abs.twimg.com/fonts/v2/chirp-regular-web.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TwitterChirp';
+  src: url('https://abs.twimg.com/fonts/v2/chirp-medium-web.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TwitterChirp';
+  src: url('https://abs.twimg.com/fonts/v2/chirp-bold-web.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TwitterChirp';
+  src: url('https://abs.twimg.com/fonts/v2/chirp-heavy-web.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── LIGHT THEME (Default) ─────────────────────────────────────── */
+:root {
+  --background: #ffffff;
+  --sidebar: #f8f9fa;
+  --surface: #ffffff;
+  --border: #e2e8f0;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --card-radius: 12px;
+  --scrollbar-thumb: #cbd5e1;
+  --scrollbar-thumb-hover: #94a3b8;
+}
+
+/* ── CHARCOAL THEME (Premium Soft Dark) ─────────────────────────── */
+.charcoal {
+  --background: #1c1c1c;
+  --sidebar: #141414;
+  --surface: #242424;
+  --border: #2e2e2e;
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+  --text-primary: #e8e8e8;
+  --text-secondary: #a0a0a0;
+  --text-muted: #555555;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --card-radius: 12px;
+  --scrollbar-thumb: #3a3a3a;
+  --scrollbar-thumb-hover: #525252;
+}
+
+/* ── DARK THEME (Elite Deep Black) ─────────────────────────────── */
+.dark {
+  --background: #080808;
+  --sidebar: #000000;
+  --surface: #0f0f0f;
+  --border: #1a1a1a;
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+  --text-primary: #f5f5f5;
+  --text-secondary: #a1a1aa;
+  --text-muted: #52525b;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --card-radius: 12px;
+  --scrollbar-thumb: #2a2a2a;
+  --scrollbar-thumb-hover: #3f3f46;
+}
+
+@layer base {
+  body {
+    font-family: 'TwitterChirp', var(--font-inter), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Smooth theme transitions */
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'TwitterChirp', var(--font-geist), system-ui, sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  code,
+  pre,
+  kbd,
+  .font-mono {
+    font-family: var(--font-mono), ui-monospace, monospace;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb, #cbd5e1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover, #94a3b8);
+}
+
+/* ── Selection ─────────────────────────────────────────────────── */
+::selection {
+  background-color: rgba(59, 130, 246, 0.25);
+  color: inherit;
+}
+
+/* ── Animations ─────────────────────────────────────────────────── */
+@layer utilities {
+  .animate-spin-slow {
+    animation: spin 3s linear infinite;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out forwards;
+}
+
+/* ── Prevent FOUC during theme transitions ──────────────────────── */
+html {
+  color-scheme: light;
+}
+
+.dark,
+.charcoal {
+  color-scheme: dark;
+}
