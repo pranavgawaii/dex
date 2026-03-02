@@ -14,7 +14,7 @@
 
 ## ✦ Core Philosophy
 
-DEX is designed to replace fragmented tools (Notion, Google Sheets, scattered apps) with a unified, high-performance dashboard that tracks technical progress natively. It provides a beautiful interface built to monitor Data Structures, Algorithms, SQL skills, Interview preparations, and system design pipelines securely from a single centralized web OS.
+**DEX** is designed to replace fragmented tools (Notion, Google Sheets, scattered apps) with a unified, high-performance dashboard that tracks technical progress natively. It provides a beautiful interface built to monitor Data Structures, Algorithms, SQL skills, Interview preparations, and system design pipelines securely from a single centralized web OS.
 
 <br />
 
